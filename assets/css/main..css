@@ -1,0 +1,245 @@
+/* FONT-SIZE RESET AND COLOR PALLETE */
+:root {
+  font-size: 62.5%;
+
+  /* PRIMARY COLORS */
+  --brand-green: hsl(170, 100%, 26%);
+  --brand-green-light: hsl(148, 23%, 89%);
+  --brand-green-light-02: hsl(180, 14%, 97%);
+  --brand-beige: hsl(39, 100%, 97%);
+  --brand-green-hover: hsl(170, 100%, 14%);
+
+  /* SECONDARY COLORS */
+  --gray-headline: #212529;
+  --gray-paragraph: #495057;
+  --white: #ffffff;
+
+  /* MEASUREMENTS  */
+  --header-height: 7.2rem;
+}
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--brand-green-light);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: calc(4.1rem + var(--header-height));
+}
+
+main,
+.sections {
+  margin-inline: 2.4rem;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.intro_h4 {
+  color: var(--brand-green);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.4rem;
+}
+
+h1 {
+  color: var(--gray-headline);
+  font-size: 3.4rem;
+  line-height: 130%;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+#p1 {
+  color: var(--gray-paragraph);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 150%;
+  margin-bottom: 3.2rem;
+}
+
+.button_01 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6rem 3.2rem;
+  gap: 1.6rem;
+  background-color: var(--brand-green);
+  border-radius: 4rem;
+  color: var(--white);
+  margin-bottom: 6rem;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.8rem;
+  transition: 0.2s;
+}
+
+.button_01:hover {
+  background-color: var(--brand-green-hover);
+}
+
+main .flexbox_01 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_img {
+  width: 26.164rem;
+  height: 34.2rem;
+}
+
+.main_card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rem;
+  background-color: var(--brand-beige);
+  padding-block: 4rem;
+  border: 0.1rem solid var(--brand-green-light);
+  border-radius: 0.6rem;
+}
+
+.main_card .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.main_card .h3 {
+  font-size: 4.8rem;
+  color: var(--gray-headline);
+}
+
+.main_card .p {
+  font-size: 1.6rem;
+  color: var(--brand-green);
+}
+
+#pageUp,
+body.menu_expanded #pageUp {
+  opacity: 0;
+  transition: 400ms;
+  visibility: hidden;
+  transform: translateY(100%);
+}
+
+#pageUp.visible {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 1rem;
+  z-index: 90;
+  opacity: 1;
+  visibility: visible;
+  transition: 400ms;
+  transform: translateY(0%);
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 550px) {
+  main,
+  .sections {
+    margin-inline: 8rem;
+  }
+}
+
+@media (min-width: 669px) {
+  main,
+  .sections {
+    margin-inline: 10rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  main {
+    align-items: initial;
+  }
+
+  main .main_card {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 6rem 12rem;
+    gap: initial;
+  }
+
+  main h1 {
+    font-weight: 700;
+    font-size: 5.2rem;
+    line-height: 130%;
+  }
+
+  main .main_card .line {
+    width: 0.1rem;
+    height: 8.3rem;
+    background-color: var(--brand-green);
+    opacity: 50%;
+  }
+
+  main .flexbox_01 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  main .intro {
+    align-items: flex-start;
+    text-align: left;
+    width: 60.5rem;
+    margin: 0;
+    justify-content: center;
+  }
+
+  main .intro button {
+    margin-bottom: 0;
+  }
+
+  main .main_img {
+    width: auto;
+    height: auto;
+    position: relative;
+  }
+}
+
+@media (min-width: 1365) {
+  main,
+  .sections {
+    margin-inline: 12.3rem;
+  }
+}

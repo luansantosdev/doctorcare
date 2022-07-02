@@ -1,0 +1,255 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: var(--header-height);
+  padding-inline: 2.4rem;
+  position: fixed;
+  transition: 0.6s;
+  z-index: 50;
+}
+
+.logo {
+  width: 13.286rem;
+  height: 1.738rem;
+}
+
+.header_button_open,
+.header_button_close,
+.schedule_button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header_button_open_svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+header.onScroll {
+  background-color: var(--brand-green);
+}
+
+/* MENU EXPANDED */
+
+body.menu_expanded {
+  overflow: hidden;
+}
+
+nav,
+.header_button_close,
+body.menu_expanded .header_button_open {
+  display: none;
+}
+
+body.menu_expanded nav,
+body.menu_expanded .header_button_close {
+  display: block;
+}
+
+nav {
+  transform: translateY(100%);
+  transition: 700ms;
+}
+
+body.menu_expanded nav {
+  padding-top: calc(6rem + var(--header-height));
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--brand-green);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition: transform 300ms;
+  transform: translateY(0%);
+}
+
+.schedule_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem 3.2rem;
+  background-color: var(--white);
+  border-radius: 4rem;
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+  border: 0.1rem solid var(--brand-green);
+  transition: 0.2s;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  color: var(--brand-green);
+}
+
+.schedule_button:hover {
+  background-color: var(--brand-green);
+  border: 0.1rem solid var(--white);
+  color: var(--white);
+}
+
+.social_links {
+  display: flex;
+  gap: 3.2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+nav ul li a {
+  width: 6.3rem;
+  height: 3.1rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+  color: var(--white);
+  text-align: center;
+}
+
+body.menu_expanded .logo,
+body.menu_expanded .header_button_close {
+  position: relative;
+  z-index: 100;
+}
+
+@media (min-width: 550px) {
+  header {
+    padding-inline: 8rem;
+  }
+}
+
+@media (min-width: 669px) {
+  header {
+    padding-inline: 10rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  header#header * {
+    all: initial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body header button#header_button_open,
+  body header button#header_button_close,
+  body header ul#social_links {
+    display: none;
+  }
+
+  nav#menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 57.5%;
+  }
+
+  nav #nav_01 {
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+  }
+
+  nav #nav_01 li a {
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    color: var(--brand-green);
+    opacity: 0.7;
+  }
+
+  nav #nav_01 li a:hover,
+  header.onScroll nav #nav_01 li a:hover,
+  nav #nav_01 li a.active,
+  header.onScroll nav #nav_01 li a.active {
+    opacity: 1;
+    font-weight: 700;
+  }
+
+  nav #nav_01 li a:after {
+    content: '';
+    width: 0%;
+    height: 0.2rem;
+    display: block;
+    background-color: var(--brand-green);
+    opacity: 0;
+    position: relative;
+    bottom: -2.42rem;
+    left: -0.5rem;
+    transition: 200ms;
+  }
+
+  nav #nav_01 li a:hover:after,
+  nav #nav_01 li a.active:after {
+    opacity: 1;
+    width: 100%;
+    padding-inline: 0.5rem;
+  }
+
+  header.onScroll nav #nav_01 li a:after {
+    background-color: white;
+  }
+
+  header.onScroll nav #nav_01 li a {
+    color: var(--brand-green-light-02);
+    opacity: 0.6;
+  }
+
+  nav #schedule_button {
+    border: 0.1rem solid var(--brand-green);
+    border-radius: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.4rem;
+    text-transform: uppercase;
+    color: var(--brand-green);
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    transition: 200ms;
+  }
+
+  nav #schedule_button:hover,
+  nav #schedule_button.active {
+    background-color: var(--brand-green);
+    color: var(--white);
+  }
+
+  header.onScroll nav #schedule_button {
+    border-color: var(--white);
+    color: var(--white);
+  }
+
+  header.onScroll nav #schedule_button:hover,
+  header.onScroll nav #schedule_button.active {
+    background-color: var(--brand-green-hover);
+    border-color: var(--brand-green-hover);
+    color: var(--white);
+  }
+}
+
+@media (min-width: 1365) {
+  header {
+    padding-inline: 12.3rem;
+  }
+}
